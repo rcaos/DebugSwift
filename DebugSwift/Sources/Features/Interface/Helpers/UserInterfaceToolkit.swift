@@ -10,10 +10,10 @@ import SwiftUI
 import Combine
 
 @MainActor
-public class UserInterfaceToolkit: @unchecked Sendable {
+class UserInterfaceToolkit: @unchecked Sendable {
     // MARK: - Properties
 
-    public static let shared = UserInterfaceToolkit()
+    static let shared = UserInterfaceToolkit()
 
     var gridOverlay = GridOverlayView()
     var gridOverlayColorSchemes: [GridOverlayColorScheme] = [
@@ -57,7 +57,7 @@ public class UserInterfaceToolkit: @unchecked Sendable {
         }
     }
     
-    public var darkModeEnabled: Bool = false {
+    var darkModeEnabled: Bool = false {
         didSet {
             guard oldValue != darkModeEnabled else { return }
             updateColorScheme()
